@@ -1,4 +1,4 @@
-# Fundament of Programming 
+# Fundaments of Programming 
 
 # Description of the application
 
