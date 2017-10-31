@@ -28,6 +28,7 @@ def menu():
         print("10. Print the max between two indexes.")
         print("11. Keep only prime numbers, remove the other elements.")
         print("12. Keep only negative numbers, remove the other elements.")
+        print("13.Undo the last operation.")
         print("99. Demo-Soft")
         print("0. Exit program.")
 
@@ -141,6 +142,12 @@ def menu():
                 print(array)
             else:
                 print("There are no negatives numbers in the array.")
+            input("Press any key...")
+            
+        elif opt=='13':
+            print(array,end="")
+            array=domain.o_array.undo()
+            print("=>",array)
             input("Press any key...")
         
                 
