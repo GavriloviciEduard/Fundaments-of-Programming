@@ -1,6 +1,8 @@
 NULL=0
 import utils.ut_functions
 
+prev_array=[]
+
 def add(array,x):
     """
         add=>
@@ -8,6 +10,9 @@ def add(array,x):
             OUT: An array of integers 'array'.
             DESC: The fuction adds an integer 'x' in an array of integers 'array'.
     """
+    
+    global prev_array
+    prev_array=array[:]
 
     array.append(x)
     return array
@@ -31,6 +36,9 @@ def remove(array,index):
             OUT: An array of integers 'array'.
             DESC: The fuction removes an element from an array of integers 'array' at a given index 'index'.
     """
+    
+    global prev_array
+    prev_array=array[:]
 
     if array!=[]:
         if index > len(array)-1:
@@ -50,6 +58,9 @@ def remove_bt(array,index_1,index_2):
             OUT: An array of integers 'array'.
             DESC: The fuction removes the element from an array of integers 'array' between two given indexes 'index_1' && 'index_2'
     """
+    
+    global prev_array
+    prev_array=array[:]
 
     if len(array)>1:
         if index_1 > index_2:
@@ -76,6 +87,9 @@ def replace(array,sub_ar_1,sub_ar_2):
             DESC: The fuction replaces all given sub-arrays with another given sub-array. To do this, every array is converted
                   into a string and the method replace() is used. At the end, the string is converted back into an array of integers.
     """
+    
+    global prev_array
+    prev_array=array[:]
 
     if array!=[]:
         array=utils.ut_functions.list_to_string(array)
@@ -249,6 +263,9 @@ def only_primes(array):
             OUT: An array of integers 'o_primes' representing only the prime numbers of the given array.
             DESC: The fuction computes and returns an array of only prime numbers.
     """
+    
+    global prev_array
+    prev_array=array[:]
 
     o_primes=[]
 
@@ -266,6 +283,9 @@ def only_negatives(array):
             OUT: An array of integers 'o_negatives' representing only the negative numbers of the given array.
             DESC: The fuction computes and returns an array of only negative numbers.
     """
+    
+    global prev_array
+    prev_array=array[:]
 
     o_negatives=[]
 
@@ -274,6 +294,16 @@ def only_negatives(array):
             o_negatives.append(el)
 
     return o_negatives
+
+def undo():
+    """
+        undo=>
+            IN: -
+            OUT: An array of integers 'prev_list' representing the last array.
+            DESC: The fuction undoes the last operation.
+    """
+    global prev_array
+    return prev_array
 
 
 
